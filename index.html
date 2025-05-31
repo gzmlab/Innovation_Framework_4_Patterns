@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovation Framework for Data & AI Design Solutions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+
+      .framework-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .framework-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .a2b-gradient {
+        background: linear-gradient(
+          135deg,
+          #fee2e2 0%,
+          #fecaca 50%,
+          #f87171 100%
+        );
+      }
+
+      .cdk-gradient {
+        background: linear-gradient(
+          135deg,
+          #d1fae5 0%,
+          #86efac 50%,
+          #10b981 100%
+        );
+      }
+
+      .zizo-gradient {
+        background: linear-gradient(
+          135deg,
+          #fed7aa 0%,
+          #fdba74 50%,
+          #f97316 100%
+        );
+      }
+
+      .iso-gradient {
+        background: linear-gradient(
+          135deg,
+          #dbeafe 0%,
+          #93c5fd 50%,
+          #3b82f6 100%
+        );
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      .feature-item {
+        transition: all 0.2s ease;
+      }
+
+      .feature-item:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(4px);
+      }
+
+      .tooltip {
+        position: relative;
+      }
+
+      .tooltip:hover .tooltip-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-10px);
+      }
+
+      .tooltip-content {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 0, 0, 0.1),
+          transparent
+        );
+        margin: 20px 0;
+      }
+
+      .interactive-badge {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .interactive-badge:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .progress-indicator {
+        width: 100%;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #10b981);
+        transition: width 0.5s ease;
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-brain text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Innovation Framework
+              </h1>
+              <p class="text-sm text-gray-600">Data & AI Design Solutions</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="progress-indicator">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <span class="text-sm text-gray-600" id="progressText"
+              >0% Complete</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+      <!-- Introduction -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">
+          A-2-B and C-D-K Frameworks
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Master these proven frameworks to optimize business value creation.
+          Each framework addresses different aspects of solution design and
+          value creation, from strategic planning to knowledge integration.
+        </p>
+      </div>
+
+      <!-- Frameworks Grid -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <!-- A-2-B Framework -->
+        <div
+          class="framework-card bg-white rounded-2xl p-8 shadow-lg a2b-gradient"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-route text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-800">A-2-B</h3>
+                <p class="text-sm font-medium text-gray-600">
+                  Business Value Creation Framework
+                </p>
+              </div>
+            </div>
+            <div
+              class="interactive-badge bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
+            >
+              Value Creation
+              <div class="tooltip-content">
+                Strategic value creation framework
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Description</h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              This framework clearly maps the journey from a current state (A)
+              to a future state (B), defining key steps and transformation
+              milestones. It allows organizations to understand and plan the
+              trajectory of their data transformation journey and effectively
+              measure progress and final value added.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-search text-red-500 mr-2"></i>
+                Current State Analysis (AS-IS)
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-eye text-red-500 mr-2"></i>
+                Vision & Roadmap
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-flag text-red-500 mr-2"></i>
+                Future State Vision (TO-BE)
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-chart-line text-red-500 mr-2"></i>
+                Success Metrics (KPIs)
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-gap text-red-500 mr-2"></i>
+                Gap Analysis (Gap To Fit)
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-dollar-sign text-red-500 mr-2"></i>
+                Value Creation (ROI)
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-briefcase text-red-500 mr-2"></i>
+              Business Applications
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Digital Transformation Roadmaps:</strong> Plan
+                enterprise-wide data modernization initiatives with clear
+                milestones and success criteria
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Change Management:</strong> Manage organizational
+                transition from legacy systems to AI-powered solutions with
+                stakeholder buy-in
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>ROI Measurement:</strong> Quantify business value
+                through KPIs like cost reduction, revenue increase, and
+                operational efficiency gains
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-cogs text-red-500 mr-2"></i>
+              Technical Implementation
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Data Migration Strategies:</strong> Plan ETL pipelines,
+                data quality frameworks, and migration phases from on-premise to
+                cloud
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Architecture Evolution:</strong> Design scalable data
+                architecture progression from monolithic to microservices-based
+                AI systems
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Performance Benchmarks:</strong> Establish baseline
+                metrics and target performance indicators for ML models and data
+                processing
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C-D-K Framework -->
+        <div
+          class="framework-card bg-white rounded-2xl p-8 shadow-lg cdk-gradient"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-network-wired text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-800">C-D-K</h3>
+                <p class="text-sm font-medium text-gray-600">
+                  Concept, Data, Knowledge
+                </p>
+              </div>
+            </div>
+            <div
+              class="interactive-badge bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
+            >
+              Inception
+              <div class="tooltip-content">Knowledge integration framework</div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Description</h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              This framework focuses on the symbiotic relationship between
+              business value spaces. Spark and ideation lead to insight:
+              business concepts (Concept), data needed to fuel concepts (Data),
+              and necessary technologies and technical (Knowledge). In this
+              approach, each area feeds opportunities for value development.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-lightbulb text-green-500 mr-2"></i>
+                Spaces for Business Concepts
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-tools text-green-500 mr-2"></i>
+                Assess Technical Capabilities
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-database text-green-500 mr-2"></i>
+                Data Assessment
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-sync text-green-500 mr-2"></i>
+                Continuous Enhancement
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-exchange-alt text-green-500 mr-2"></i>
+                Cross-domain Innovation
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-project-diagram text-green-500 mr-2"></i>
+                Solutions Lineage, Spin-off
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-briefcase text-green-500 mr-2"></i>
+              Business Applications
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Data Monetization:</strong> Identify valuable data
+                assets and create new revenue streams through data products and
+                AI services
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Knowledge Management:</strong> Capture domain expertise
+                and translate it into scalable AI models and automated decision
+                systems
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Cross-functional Collaboration:</strong> Bridge gaps
+                between business, data science, and engineering teams for
+                innovation alignment
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-cogs text-green-500 mr-2"></i>
+              Technical Implementation
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Data Governance:</strong> Implement data catalogs,
+                lineage tracking, and quality frameworks to ensure reliable
+                concept-to-insight flow
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Knowledge Graphs:</strong> Build semantic relationships
+                between concepts, data entities, and business rules for AI
+                reasoning
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Metadata Management:</strong> Create comprehensive
+                metadata repositories linking business concepts to technical
+                implementations
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZI-ZO Framework -->
+        <div
+          class="framework-card bg-white rounded-2xl p-8 shadow-lg zizo-gradient"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-magnifying-glass text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-800">ZI-ZO</h3>
+                <p class="text-sm font-medium text-gray-600">
+                  Zoom-In, Zoom-Out
+                </p>
+              </div>
+            </div>
+            <div
+              class="interactive-badge bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
+            >
+              Contextual
+              <div class="tooltip-content">
+                Strategic-tactical alignment framework
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Description</h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              This framework balances strategic view (Zoom Out) with tactical
+              implementation (Zoom In) to ensure alignment at all organizational
+              levels. It helps bridge the gap between executive vision and
+              operational execution and implementation.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-globe mr-2" style="color: #f97316"></i>
+                Embrace the Holistic View
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-building mr-2" style="color: #f97316"></i>
+                Drive Solution Architecture
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-microscope mr-2" style="color: #f97316"></i>
+                Dive Deep in Elementary Parts
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-puzzle-piece mr-2" style="color: #f97316"></i>
+                Breakdown the Solution
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-arrows-alt-v mr-2" style="color: #f97316"></i>
+                Top-Bottom Movement
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-users mr-2" style="color: #f97316"></i>
+                Engage with Relevant Parties
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-briefcase mr-2" style="color: #f97316"></i>
+              Business Applications
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Strategic Alignment:</strong> Ensure AI initiatives
+                align with business strategy while maintaining technical
+                feasibility and resource constraints
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Stakeholder Management:</strong> Balance executive
+                vision with operational needs through clear communication
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Agile Methodologies:</strong> Apply sprint planning with
+                strategic vision to maintain long-term goals while delivering
+                incremental value
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-cogs mr-2" style="color: #f97316"></i>
+              Technical Implementation
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Microservices Architecture:</strong> Design modular AI
+                systems that can scale independently while serving
+                enterprise-wide objectives
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>API Design:</strong> Create service interfaces that
+                abstract technical complexity while enabling business process
+                integration
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Scalability Patterns:</strong> Implement horizontal and
+                vertical scaling strategies to handle varying workloads and data
+                volumes
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- I-S-O Framework -->
+        <div
+          class="framework-card bg-white rounded-2xl p-8 shadow-lg iso-gradient"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-cogs text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-800">I-S-O</h3>
+                <p class="text-sm font-medium text-gray-600">
+                  Input(s), System, Output(s)
+                </p>
+              </div>
+            </div>
+            <div
+              class="interactive-badge bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
+            >
+              Engineering
+              <div class="tooltip-content">Process optimization framework</div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Description</h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              This framework optimizes data solution design by focusing on
+              primary and secondary inbound flows, processing systems
+              efficiency, and output actionable data and insights. These
+              initiatives deliver tangible value by producing significant and
+              usable results.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="font-semibold text-gray-800 mb-3">Key Features</h4>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-cloud text-blue-500 mr-2"></i>
+                Environment and Context
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-sitemap text-blue-500 mr-2"></i>
+                Identification of Subsystems
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-sign-in-alt text-blue-500 mr-2"></i>
+                Identification of Input Flows
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-sign-out-alt text-blue-500 mr-2"></i>
+                Definition of Output Flows
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-tasks text-blue-500 mr-2"></i>
+                Functional Breakdown
+              </div>
+              <div class="feature-item p-2 rounded-lg">
+                <i class="fas fa-chart-pie text-blue-500 mr-2"></i>
+                System ROI
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-briefcase text-blue-500 mr-2"></i>
+              Business Applications
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Process Optimization:</strong> Streamline business
+                workflows by identifying bottlenecks and automating manual data
+                processing tasks
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Value Stream Mapping:</strong> Visualize end-to-end data
+                flows to eliminate waste and maximize value delivery to
+                customers
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Operational Efficiency:</strong> Measure and improve
+                system performance through input optimization and output quality
+                enhancement
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+              <i class="fas fa-cogs text-blue-500 mr-2"></i>
+              Technical Implementation
+            </h4>
+            <div class="space-y-2 text-sm text-gray-700">
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Data Pipelines:</strong> Design robust ETL/ELT processes
+                with error handling, monitoring, and automated recovery
+                mechanisms
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>System Integration:</strong> Connect disparate data
+                sources through APIs, message queues, and real-time streaming
+                architectures
+              </div>
+              <div class="bg-white bg-opacity-50 p-3 rounded-lg">
+                <strong>Performance Monitoring:</strong> Implement comprehensive
+                logging, metrics collection, and alerting for system health and
+                SLA compliance
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Learning Section -->
+      <div
+        class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 mb-8"
+      >
+        <div class="text-center mb-8">
+          <h3 class="text-3xl font-bold text-gray-800 mb-4">
+            Interactive Learning Dashboard
+          </h3>
+          <p class="text-gray-600">
+            Explore how these frameworks interconnect and complement each other
+            in real-world scenarios
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer"
+            onclick="showScenario('digital-transformation')"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-rocket text-white"></i>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-2">
+              Digital Transformation
+            </h4>
+            <p class="text-sm text-gray-600">
+              See how A-2-B and ZI-ZO work together for enterprise
+              transformation
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer"
+            onclick="showScenario('ai-implementation')"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-brain text-white"></i>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-2">AI Implementation</h4>
+            <p class="text-sm text-gray-600">
+              Combine C-D-K and I-S-O for successful AI project delivery
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer"
+            onclick="showScenario('data-strategy')"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-database text-white"></i>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-2">Data Strategy</h4>
+            <p class="text-sm text-gray-600">
+              Leverage all four frameworks for comprehensive data strategy
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer"
+            onclick="showScenario('innovation-process')"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-lightbulb text-white"></i>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-2">Innovation Process</h4>
+            <p class="text-sm text-gray-600">
+              Apply frameworks iteratively for continuous innovation
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <i class="fas fa-star text-yellow-500 mr-3"></i>
+          Implementation Best Practices
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i>
+              Do's
+            </h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                <span
+                  >Start with clear business objectives before choosing
+                  frameworks</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                <span
+                  >Combine multiple frameworks for comprehensive coverage</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                <span>Involve stakeholders from all organizational levels</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                <span>Iterate and refine based on feedback and results</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                <span>Document lessons learned for future projects</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-times-circle text-red-500 mr-2"></i>
+              Don'ts
+            </h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <i class="fas fa-times text-red-500 mr-2 mt-1"></i>
+                <span
+                  >Don't apply frameworks without understanding context</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-times text-red-500 mr-2 mt-1"></i>
+                <span
+                  >Avoid over-engineering solutions for simple problems</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-times text-red-500 mr-2 mt-1"></i>
+                <span>Don't ignore technical constraints and limitations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-times text-red-500 mr-2 mt-1"></i>
+                <span
+                  >Avoid siloed implementation without cross-team
+                  collaboration</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-times text-red-500 mr-2 mt-1"></i>
+                <span>Don't skip measurement and evaluation phases</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t mt-16">
+      <div class="container mx-auto px-6 py-8">
+        <div class="text-center">
+          <p class="text-gray-600 mb-4">
+            Master these innovation frameworks to accelerate your Data & AI
+            transformation journey
+          </p>
+          <div class="flex items-center justify-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-users text-blue-500"></i>
+              <span class="text-sm text-gray-600">Team Training</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-graduation-cap text-purple-500"></i>
+              <span class="text-sm text-gray-600">University Lectures</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-rocket text-green-500"></i>
+              <span class="text-sm text-gray-600">Innovation Acceleration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer with Author and Version Info -->
+      <div class="mt-12 p-6 bg-gray-100 rounded-lg">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <div class="text-lg font-semibold flex items-center">
+              <i class="fas fa-user-edit text-gray-700 mr-2"></i> Author:
+              <span class="text-indigo-700 ml-2">Hugues Pintus - 2025</span>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-code-branch text-gray-700 mr-2"></i>
+            <div>
+              <span class="font-medium">Version:</span>
+              <span class="text-indigo-700">1.1</span>
+              <div class="text-xs text-gray-500">Last updated: June 2025</div>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Scenarios -->
+    <div id="scenarioModal" class="modal">
+      <div class="modal-content">
+        <div class="flex items-center justify-between mb-6">
+          <h3 id="modalTitle" class="text-2xl font-bold text-gray-800"></h3>
+          <button
+            onclick="closeModal()"
+            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors"
+          >
+            <i class="fas fa-times text-gray-600"></i>
+          </button>
+        </div>
+        <div id="modalContent" class="text-gray-700 leading-relaxed"></div>
+      </div>
+    </div>
+
+    <script>
+      // Progress tracking
+      let completedSections = new Set();
+
+      // Add intersection observer for progress tracking
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const framework = entry.target.querySelector("h3")?.textContent;
+              if (framework) {
+                completedSections.add(framework);
+                updateProgress();
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+
+      // Observe all framework cards
+      document.querySelectorAll(".framework-card").forEach((card) => {
+        observer.observe(card);
+      });
+
+      function updateProgress() {
+        const total = 4;
+        const completed = completedSections.size;
+        const percentage = Math.round((completed / total) * 100);
+
+        document.getElementById("progressBar").style.width = percentage + "%";
+        document.getElementById("progressText").textContent =
+          percentage + "% Complete";
+      }
+
+      // Scenario modal functionality
+      const scenarios = {
+        "digital-transformation": {
+          title: "Digital Transformation Scenario",
+          content: `
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-lg">A-2-B + ZI-ZO Framework Combination</h4>
+                        <p>In a large enterprise digital transformation, these frameworks work synergistically:</p>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <strong>A-2-B Application:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Current State: Legacy monolithic systems with manual processes</li>
+                                <li>Future State: Cloud-native AI-powered microservices architecture</li>
+                                <li>Key Milestones: Data migration, API modernization, ML model deployment</li>
+                                <li>Success Metrics: 60% cost reduction, 80% faster processing, 95% automation</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <strong>ZI-ZO Application:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Zoom Out: Enterprise strategy alignment and stakeholder buy-in</li>
+                                <li>Zoom In: Technical implementation details and team coordination</li>
+                                <li>Balance: Weekly strategic reviews with daily tactical stand-ups</li>
+                                <li>Engagement: C-level sponsors, middle management, and technical teams</li>
+                            </ul>
+                        </div>
+                        <p class="text-sm text-gray-600">This combination ensures strategic vision is maintained while enabling detailed execution planning.</p>
+                    </div>
+                `,
+        },
+        "ai-implementation": {
+          title: "AI Implementation Scenario",
+          content: `
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-lg">C-D-K + I-S-O Framework Combination</h4>
+                        <p>For implementing AI-powered customer recommendation systems:</p>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <strong>C-D-K Application:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Concept: Personalized customer experience and revenue optimization</li>
+                                <li>Data: Customer behavior, purchase history, product catalogs, market trends</li>
+                                <li>Knowledge: ML algorithms, domain expertise, business rules, technical skills</li>
+                                <li>Integration: Cross-functional teams linking marketing, data science, and engineering</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <strong>I-S-O Application:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Inputs: Real-time user actions, historical data, product information</li>
+                                <li>System: ML pipeline with feature engineering, model training, and inference</li>
+                                <li>Outputs: Personalized recommendations, confidence scores, A/B test metrics</li>
+                                <li>Optimization: Latency < 100ms, accuracy > 85%, revenue lift > 15%</li>
+                            </ul>
+                        </div>
+                        <p class="text-sm text-gray-600">This approach ensures AI solutions deliver measurable business value through systematic implementation.</p>
+                    </div>
+                `,
+        },
+        "data-strategy": {
+          title: "Comprehensive Data Strategy",
+          content: `
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-lg">All Four Frameworks Integration</h4>
+                        <p>Building an enterprise-wide data strategy requires all frameworks:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-red-50 p-3 rounded-lg">
+                                <strong>A-2-B:</strong> Strategic roadmap from data silos to unified data mesh
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg">
+                                <strong>C-D-K:</strong> Business value identification and knowledge capture
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg">
+                                <strong>ZI-ZO:</strong> Executive alignment with operational implementation
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg">
+                                <strong>I-S-O:</strong> Data pipeline optimization and quality assurance
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <strong>Integration Points:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>A-2-B defines overall transformation journey</li>
+                                <li>C-D-K identifies value opportunities at each stage</li>
+                                <li>ZI-ZO ensures stakeholder alignment throughout</li>
+                                <li>I-S-O optimizes technical implementation</li>
+                                <li>Continuous feedback loops between all frameworks</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+        },
+        "innovation-process": {
+          title: "Continuous Innovation Process",
+          content: `
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-lg">Iterative Framework Application</h4>
+                        <p>Using frameworks in cycles for ongoing innovation:</p>
+                        <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg">
+                            <strong>Innovation Cycle:</strong>
+                            <div class="mt-3 space-y-2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                                    <span><strong>Discover:</strong> Use C-D-K to identify new opportunities</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                                    <span><strong>Plan:</strong> Apply A-2-B for transformation roadmap</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                                    <span><strong>Execute:</strong> Use ZI-ZO for strategic-tactical balance</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</div>
+                                    <span><strong>Optimize:</strong> Apply I-S-O for system efficiency</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</div>
+                                    <span><strong>Iterate:</strong> Return to step 1 with new insights</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <strong>Success Factors:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Regular retrospectives and framework effectiveness assessment</li>
+                                <li>Cross-functional innovation teams with diverse perspectives</li>
+                                <li>Metrics-driven approach with clear success criteria</li>
+                                <li>Culture of experimentation and learning from failures</li>
+                                <li>Continuous skill development and framework mastery</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+        },
+      };
+
+      function showScenario(scenarioKey) {
+        const scenario = scenarios[scenarioKey];
+        document.getElementById("modalTitle").textContent = scenario.title;
+        document.getElementById("modalContent").innerHTML = scenario.content;
+        document.getElementById("scenarioModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("scenarioModal").style.display = "none";
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("scenarioModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+
+      // Add smooth scrolling for better UX
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Add hover effects for interactive elements
+      document.querySelectorAll(".interactive-badge").forEach((badge) => {
+        badge.addEventListener("mouseenter", function () {
+          this.style.transform = "scale(1.05)";
+        });
+        badge.addEventListener("mouseleave", function () {
+          this.style.transform = "scale(1)";
+        });
+      });
+
+      // Keyboard navigation for accessibility
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Initialize progress
+      updateProgress();
+    </script>
+  </body>
+</html>
