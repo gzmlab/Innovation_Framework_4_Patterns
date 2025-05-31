@@ -179,6 +179,35 @@
         transition: width 0.5s ease;
         width: 0%;
       }
+
+      .frame-header {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        margin: -2rem -2rem 1.5rem -2rem;
+        /* Use individual background for each framework */
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+      }
+
+      .icon-container {
+        background: #fff;
+        border-width: 4px;
+        border-style: solid;
+        border-radius: 9999px;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1.25rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+      }
+
+      .badge {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
     </style>
   </head>
   <body class="min-h-screen bg-white">
@@ -231,27 +260,19 @@
         <div
           class="framework-card bg-white rounded-2xl p-8 shadow-lg a2b-gradient"
         >
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center"
-              >
-                <i class="fas fa-route text-white text-xl"></i>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-gray-800">A-2-B</h3>
-                <p class="text-sm font-medium text-gray-600">
-                  Business Value Creation Framework
-                </p>
-              </div>
+          <div class="frame-header" style="background: linear-gradient(90deg, #f87171 0%, #fecaca 100%); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div class="icon-container" style="border-color: #f87171;">
+              <i class="fas fa-route text-red-500 text-2xl"></i>
             </div>
-            <div
-              class="interactive-badge bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
-            >
-              Value Creation
-              <div class="tooltip-content">
-                Strategic value creation framework
-              </div>
+            <div>
+              <div class="text-xl font-extrabold text-gray-800 tracking-wide uppercase">A-2-B</div>
+              <div class="text-xs font-medium text-gray-700 opacity-80 mt-1">Business Value Creation Framework</div>
+            </div>
+            <div class="ml-auto">
+              <span class="badge px-4 py-1 bg-red-500 text-white rounded-full text-xs font-semibold shadow tooltip">
+                Value Creation
+                <span class="tooltip-content">Strategic value creation framework</span>
+              </span>
             </div>
           </div>
 
@@ -351,25 +372,19 @@
         <div
           class="framework-card bg-white rounded-2xl p-8 shadow-lg cdk-gradient"
         >
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center"
-              >
-                <i class="fas fa-lightbulb text-white text-xl"></i>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-gray-800">C-D-K</h3>
-                <p class="text-sm font-medium text-gray-600">
-                  Concept, Data, Knowledge
-                </p>
-              </div>
+          <div class="frame-header" style="background: linear-gradient(90deg, #10b981 0%, #6ee7b7 100%); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div class="icon-container" style="border-color: #10b981;">
+              <i class="fas fa-lightbulb text-green-500 text-2xl"></i>
             </div>
-            <div
-              class="interactive-badge bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
-            >
-              Inception
-              <div class="tooltip-content">Knowledge integration framework</div>
+            <div>
+              <div class="text-xl font-extrabold text-gray-800 tracking-wide uppercase">C-D-K</div>
+              <div class="text-xs font-medium text-gray-700 opacity-80 mt-1">Concept, Data, Knowledge</div>
+            </div>
+            <div class="ml-auto">
+              <span class="badge px-4 py-1 bg-green-500 text-white rounded-full text-xs font-semibold shadow tooltip">
+                Inception
+                <span class="tooltip-content">Knowledge integration framework</span>
+              </span>
             </div>
           </div>
 
@@ -469,27 +484,19 @@
         <div
           class="framework-card bg-white rounded-2xl p-8 shadow-lg zizo-gradient"
         >
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl flex items-center justify-center"
-              >
-                <i class="fas fa-magnifying-glass text-white text-xl"></i>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-gray-800">ZI-ZO</h3>
-                <p class="text-sm font-medium text-gray-600">
-                  Zoom-In, Zoom-Out
-                </p>
-              </div>
+          <div class="frame-header" style="background: linear-gradient(90deg, #fdba74 0%, #f97316 100%); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div class="icon-container" style="border-color: #f97316;">
+              <i class="fas fa-magnifying-glass text-orange-500 text-2xl"></i>
             </div>
-            <div
-              class="interactive-badge bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
-            >
-              Contextual
-              <div class="tooltip-content">
-                Strategic-tactical alignment framework
-              </div>
+            <div>
+              <div class="text-xl font-extrabold text-gray-800 tracking-wide uppercase">ZI-ZO</div>
+              <div class="text-xs font-medium text-gray-700 opacity-80 mt-1">Zoom-In, Zoom-Out</div>
+            </div>
+            <div class="ml-auto">
+              <span class="badge px-4 py-1 bg-orange-500 text-white rounded-full text-xs font-semibold shadow tooltip">
+                Contextual
+                <span class="tooltip-content">Strategic-tactical alignment framework</span>
+              </span>
             </div>
           </div>
 
@@ -587,25 +594,19 @@
         <div
           class="framework-card bg-white rounded-2xl p-8 shadow-lg iso-gradient"
         >
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center"
-              >
-                <i class="fas fa-cogs text-white text-xl"></i>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold text-gray-800">I-S-O</h3>
-                <p class="text-sm font-medium text-gray-600">
-                  Input(s), System, Output(s)
-                </p>
-              </div>
+          <div class="frame-header" style="background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div class="icon-container" style="border-color: #3b82f6;">
+              <i class="fas fa-cogs text-blue-500 text-2xl"></i>
             </div>
-            <div
-              class="interactive-badge bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium tooltip"
-            >
-              Engineering
-              <div class="tooltip-content">Process optimization framework</div>
+            <div>
+              <div class="text-xl font-extrabold text-gray-800 tracking-wide uppercase">I-S-O</div>
+              <div class="text-xs font-medium text-gray-700 opacity-80 mt-1">Input(s), System, Output(s)</div>
+            </div>
+            <div class="ml-auto">
+              <span class="badge px-4 py-1 bg-blue-500 text-white rounded-full text-xs font-semibold shadow tooltip">
+                Engineering
+                <span class="tooltip-content">Process optimization framework</span>
+              </span>
             </div>
           </div>
 
