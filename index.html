@@ -208,6 +208,34 @@
       .badge {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       }
+
+
+      .bg-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 120px;
+        opacity: 0.05;
+        z-index: 1;
+      }
+
+      .a2b .bg-icon {
+        color: var(--red-accent);
+      }
+
+      .cdk .bg-icon {
+        color: var(--green-accent);
+      }
+
+      .zizo .bg-icon {
+        color: var(--orange-accent);
+      }
+
+      .iso .bg-icon {
+        color: var(--blue-accent);
+      }
+
+
     </style>
   </head>
   <body class="min-h-screen bg-white">
@@ -363,6 +391,7 @@
               </div>
             </div>
           </div>
+          <i class="fas fa-route bg-icon"></i>
         </div>
 
         <!-- C-D-K Framework -->
@@ -475,6 +504,7 @@
               </div>
             </div>
           </div>
+          <i class="fas fa-lightbulb bg-icon"></i>
         </div>
 
         <!-- ZI-ZO Framework -->
@@ -585,6 +615,7 @@
               </div>
             </div>
           </div>
+          <i class="fas fa-search bg-icon"></i>
         </div>
 
         <!-- I-S-O Framework -->
@@ -593,7 +624,7 @@
         >
           <div class="frame-header" style="background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
             <div class="icon-container" style="border-color: #3b82f6;">
-              <i class="fas fa-cogs text-blue-500 text-2xl"></i>
+              <i class="fas fa-random text-blue-500 text-2xl"></i>
             </div>
             <div>
               <div class="text-xl font-extrabold text-gray-800 tracking-wide uppercase">I-S-O</div>
@@ -697,7 +728,9 @@
               </div>
             </div>
           </div>
+          <i class="fas fa-random bg-icon"></i>
         </div>
+
       </div>
 
       <!-- Interactive Learning Section -->
